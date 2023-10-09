@@ -1,11 +1,13 @@
 package org.master.java.Variables;
 
 import javax.swing.*;
+import java.util.Scanner;
 
 public class SistemaNumerico {
+    static Scanner input = new Scanner (System.in);
     public static void main(String[] args) {
         int numeroDecimal = Integer.parseInt(
-                solDato("Ingresa un numero")
+                solDatoConsola("Ingresa un numero: ")
         );
         System.out.println("numeroDecimal = " + numeroDecimal);
         System.out.println("numero binario de "
@@ -36,7 +38,16 @@ public class SistemaNumerico {
          */
     }
 
+    /**
+     *
+     * @param mensaje
+     * @return String data
+     */
     public static String solDato(String mensaje){
         return JOptionPane.showInputDialog(mensaje);
+    }
+    public static String solDatoConsola(String mensaje){
+        System.out.print(mensaje);
+        return input.nextLine();
     }
 }
